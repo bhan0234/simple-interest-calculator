@@ -1,23 +1,22 @@
 #!/bin/bash
-
-# Get user input for principal amount
-echo "Enter the principal amount (e.g., 1000): "
-read principal
-
-# Get user input for rate of interest
-echo "Enter the rate of interest (e.g., 5 for 5%): "
-read rate
-
-# Get user input for time period
-echo "Enter the time period (in years): "
-read time
-
-# Calculate simple interest (using bc for better precision)
-simple_interest=$(echo "scale=2; $principal * $rate * $time / 100" | bc)
-
-# Display the simple interest
-echo "Simple Interest is: $simple_interest"
-
-# (Optional) Calculate amount (principal + interest)
-amount=$(echo "scale=2; $principal + $simple_interest" | bc)
-echo "Total Amount is: $amount"
+   # This script calculates simple interest given principal,
+   # annual rate of interest and time period in years.
+   # Do not use this in production. Sample purpose only.
+   # Author: bhanu
+   # Additional Authors:
+   # bhan0234
+   # Input:
+   # p, principal amount
+   # t, time period in years
+   # r, annual rate of interest
+   # Output:
+   # simple interest = p*t*r
+   echo "Enter the principal:"
+   read p
+   echo "Enter rate of interest per year:"
+   read r
+   echo "Enter time period in years:"
+   read t
+   s=`expr $p \* $t \* $r / 100`
+   echo "The simple interest is: "
+   echo $s
